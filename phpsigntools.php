@@ -15,7 +15,7 @@ if(!is_file($file)){
     die("error file:$file\n");
 }
 $code = file_get_contents($file);
-$tpl='<?php $__code=file_get_contents(__FILE__);$__code_arr=explode("\n",$__code,2);$__code_head = $__code_arr[0];$__code_head_arr = explode("//",$__code_head);$sign = array_pop($__code_head_arr);if(md5(substr($__code_arr[1],2))!=$sign){echo "sign error\n";}//';
+$tpl='<?php $__code=file_get_contents(__FILE__);$__code_arr=explode("\n",$__code,2);$__code_head = $__code_arr[0];$__code_head_arr = explode("//",$__code_head);$sign = array_pop($__code_head_arr);if(md5(substr($__code_arr[1],2))!=$sign){die("sign error\n");}//';
 $__code=file_get_contents($file);$__code_arr=explode("\n",$__code,2);$__code_head = $__code_arr[0];$__code_head_arr = explode('//',$__code_head);$sign = $__code_head_arr[1];
 
 $tpl.=md5($code)."\n?>";
