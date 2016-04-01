@@ -1,0 +1,9 @@
+<?php
+/**
+ * User: sdm
+ * Date: 16/4/1
+ * Time: 21:08
+ */
+
+
+echo "hello\n";
